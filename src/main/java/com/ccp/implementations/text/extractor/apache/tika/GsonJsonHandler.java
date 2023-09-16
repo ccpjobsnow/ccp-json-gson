@@ -2,11 +2,11 @@ package com.ccp.implementations.text.extractor.apache.tika;
 
 import java.util.Map;
 
-import com.ccp.especifications.json.CcpJson;
+import com.ccp.especifications.json.CcpJsonHandler;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-class JsonWithGson implements CcpJson {
+class GsonJsonHandler implements CcpJsonHandler {
 
 	private static final GsonBuilder GSON_BUILDER = new GsonBuilder();
 	private static final Gson GSON = new Gson();
