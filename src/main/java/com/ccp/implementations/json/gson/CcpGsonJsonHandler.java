@@ -1,4 +1,4 @@
-package com.ccp.implementations.text.extractor.apache.tika;
+package com.ccp.implementations.json.gson;
 
 import com.ccp.dependency.injection.CcpInstanceProvider;
 
