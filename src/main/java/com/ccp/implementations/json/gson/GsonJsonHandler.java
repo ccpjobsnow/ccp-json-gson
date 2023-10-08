@@ -29,6 +29,16 @@ class GsonJsonHandler implements CcpJsonHandler {
 		return (T)fromJson;
 	}
 
+	@Override
+	public boolean isValidJson(String src) {
+		try {
+			GSON.fromJson(src, Map.class);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	
 
 }
