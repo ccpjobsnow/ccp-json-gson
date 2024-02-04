@@ -11,25 +11,25 @@ class GsonJsonHandler implements CcpJsonHandler {
 	private static final GsonBuilder GSON_BUILDER = new GsonBuilder();
 	private static final Gson GSON = new Gson();
 
-	@Override
+	
 	public String toJson(Object md) {
 		String json = GSON.toJson(md);
 		return json;
 	}
 
-	@Override
+	
 	public String asPrettyJson(Object md) {
 		return GSON_BUILDER.setPrettyPrinting().create().toJson(md);
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
+	
 	public <T> T  fromJson(String str) {
 		Map<String, Object> fromJson = GSON.fromJson(str, Map.class);
 		return (T)fromJson;
 	}
 
-	@Override
+	
 	public boolean isValidJson(String src) {
 		try {
 			GSON.fromJson(src, Map.class);
