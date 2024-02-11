@@ -25,7 +25,7 @@ class GsonJsonHandler implements CcpJsonHandler {
 	@SuppressWarnings("unchecked")
 	
 	public <T> T  fromJson(String str) {
-		Map<String, Object> fromJson = GSON.fromJson(str, Map.class);
+		Object fromJson = GSON.fromJson(str, Object.class);
 		return (T)fromJson;
 	}
 
