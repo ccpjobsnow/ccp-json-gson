@@ -13,13 +13,19 @@ class GsonJsonHandler implements CcpJsonHandler {
 
 	
 	public String toJson(Object md) {
-		String json = GSON.toJson(md);
-		return json;
+		String json = GSON_BUILDER
+				.setExclusionStrategies(ClassExclusionStrategy.INSTANCE)
+				.create().toJson(md);
+		Map<String, Object> fromJson = this.fromJson(json);
+		String json2 = GSON.toJson(fromJson);
+		return json2;
 	}
 
 	
 	public String asPrettyJson(Object md) {
-		return GSON_BUILDER.setPrettyPrinting().create().toJson(md);
+		return GSON_BUILDER.setPrettyPrinting()
+				.setExclusionStrategies(ClassExclusionStrategy.INSTANCE)
+				.create().toJson(md);
 	}
 
 	@SuppressWarnings("unchecked")
